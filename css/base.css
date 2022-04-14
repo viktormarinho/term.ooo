@@ -1,0 +1,78 @@
+*{
+    padding: 0; margin: 0;
+}
+
+body{
+    background-color: rgb(83, 74, 69);
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.buttons i{
+    color: rgb(182, 182, 182);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    width: 1rem;
+    height: 1rem;
+    border: solid 2px rgb(182, 182, 182);
+    text-align: center;
+    cursor: pointer;
+}
+.header-title{
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.display-cube{
+    width: 3rem;
+    height: 3rem;
+    color: white;
+    border-radius: 4px;
+    background-color: transparent;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    border: solid 4px rgb(51, 45, 42);
+}
+.display{
+    display: flex;
+    flex-wrap: wrap;
+    width: 18rem;
+    gap: 2px;
+}
+.linha{
+    display: flex;
+    gap: 2px;
+}
+.selected{
+    border-bottom: solid 8px rgb(51, 45, 42);
+    height: calc(3rem - 4px);
+}
+.game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 2rem;
+}
+.chutar{
+    padding: 0.5rem 5rem;
+    font-size: 2rem;
+    font-family: Arial;
+    font-weight: 700;
+    color: white;
+    background-color: rgb(33, 175, 116);
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+.chutar:hover{
+    background-color: rgb(26, 141, 93);
+}
