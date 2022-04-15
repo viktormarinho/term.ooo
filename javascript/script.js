@@ -1,4 +1,5 @@
 const display = document.querySelector('section.display');
+const palavraSorteada = 'RADIO';
 
 const isAlpha = function(ch){
     return /^[A-Z]$/i.test(ch);
@@ -26,6 +27,7 @@ for(let i=0; i < 6; i++){
 
 document.querySelector('body').addEventListener('keydown', (evt) => {
         let linhas = Array.from(document.querySelectorAll('.linha'));
+        let linhaAtual = 0;
  
         linhas.forEach((l) =>{
             let next = false;
@@ -80,6 +82,52 @@ document.querySelector('body').addEventListener('keydown', (evt) => {
                         }
                     }
                 })
+            }
+            
+            if (evt.keyCode == 13){
+                
+                let linhaAtualArr = Array.from(linhas[linhaAtual].querySelectorAll('.display-cube'));
+                let completo = true;
+                let ganhou = false;
+                let palavraChute = '';
+                
+
+                linhaAtualArr.forEach((cubo, idx) =>{
+                    if(cubo.textContent == ''){
+                        completo = false;
+                    }
+                    if(cubo.classList.contains('selected')){
+                        cubo.classList.remove('selected');
+                    }
+                    palavraChute += cubo.textContent;
+
+                    if (completo){
+                        if (cubo.textContent == palavraSorteada[idx]){
+                            cubo.style.backgroundColor = '#3AA394';
+                        }else if(palavraSorteada.includes(cubo.textContent) && cubo.textContent != ''){
+                            cubo.style.backgroundColor = '#D3AD69';
+                        }else {
+                            cubo.style.backgroundColor = '#312A2C';
+                        }
+                    }
+                });
+
+                if (palavraChute == palavraSorteada){
+                    ganhou = true;
+                }
+                
+                // MUITO PROBLEMA RESOLVER ============ CARALHO PQ TA RODANDO
+                // MIL VEZES
+                if (!ganhou){
+                    linhaAtual++;
+                    for (let i=0; i< linhaAtualArr.length; i++){
+                        let c = linhaAtualArr[i];
+                        if (c.textContent == ''){
+                            c.classList.add('selected');
+                            break;
+                        }
+                    }
+                }
             }
 
             if (isAlpha(evt.key)){

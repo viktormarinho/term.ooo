@@ -3,7 +3,7 @@
 }
 
 body{
-    background-color: rgb(83, 74, 69);
+    background-color: #6E5C62;
 }
 header{
     display: flex;
@@ -39,7 +39,7 @@ header{
     align-items: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 700;
-    border: solid 4px rgb(51, 45, 42);
+    border: solid 4px #312A2C;
 }
 .display{
     display: flex;
@@ -52,7 +52,7 @@ header{
     gap: 2px;
 }
 .selected{
-    border-bottom: solid 8px rgb(51, 45, 42);
+    border-bottom: solid 8px #312A2C;
     height: calc(3rem - 4px);
 }
 .game{
@@ -68,11 +68,11 @@ header{
     font-family: Arial;
     font-weight: 700;
     color: white;
-    background-color: rgb(33, 175, 116);
+    background-color: #3AA394;
     border-radius: 4px;
     border: none;
     cursor: pointer;
 }
 .chutar:hover{
-    background-color: rgb(26, 141, 93);
+    background-color: #2d8073;
 }
